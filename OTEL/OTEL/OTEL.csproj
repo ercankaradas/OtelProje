@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{46F796E9-3AE8-4B82-900B-F340081AFD7A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>OTEL</RootNamespace>
+    <AssemblyName>OTEL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\CrudFacede\IOtelRep.cs" />
+    <Compile Include="Classes\CrudFacede\OtelCrud.cs" />
+    <Compile Include="Classes\Entities\DbObject.cs" />
+    <Compile Include="Classes\Entities\DbObjectSD.cs" />
+    <Compile Include="Classes\Entities\Il.cs" />
+    <Compile Include="Classes\Entities\Ilce.cs" />
+    <Compile Include="Classes\Entities\Mahalle.cs" />
+    <Compile Include="Classes\Entities\Musteri.cs" />
+    <Compile Include="Classes\Entities\Oda.cs" />
+    <Compile Include="Classes\Entities\Otel.cs" />
+    <Compile Include="Classes\Entities\OtelOzellik.cs" />
+    <Compile Include="Classes\Entities\OtelResim.cs" />
+    <Compile Include="Classes\Entities\Ozellik.cs" />
+    <Compile Include="Classes\Entities\Rezervasyon.cs" />
+    <Compile Include="Classes\Entities\Yildiz.cs" />
+    <Compile Include="Classes\Entities\Yorum.cs" />
+    <Compile Include="Classes\Eventler\Search.cs" />
+    <Compile Include="Classes\Factory\DbFactory.cs" />
+    <Compile Include="Classes\Style\ButtonStyle.cs" />
+    <Compile Include="Classes\Style\LabelStyle.cs" />
+    <Compile Include="DbModel\DbModel.cs" />
+    <Compile Include="Enum\OdaTipi.cs" />
+    <Compile Include="Enum\OdemeZamani.cs" />
+    <Compile Include="FrmAnaSayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAnaSayfa.Designer.cs">
+      <DependentUpon>FrmAnaSayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGiris.Designer.cs">
+      <DependentUpon>FrmGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOdaDetay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdaDetay.Designer.cs">
+      <DependentUpon>FrmOdaDetay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOdalar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdalar.Designer.cs">
+      <DependentUpon>FrmOdalar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOdaYorumlari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOdaYorumlari.Designer.cs">
+      <DependentUpon>FrmOdaYorumlari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902071701173_v1.cs" />
+    <Compile Include="Migrations\201902071701173_v1.Designer.cs">
+      <DependentUpon>201902071701173_v1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902071715500_v2.cs" />
+    <Compile Include="Migrations\201902071715500_v2.Designer.cs">
+      <DependentUpon>201902071715500_v2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902081323133_v5.cs" />
+    <Compile Include="Migrations\201902081323133_v5.Designer.cs">
+      <DependentUpon>201902081323133_v5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902081428556_v6.cs" />
+    <Compile Include="Migrations\201902081428556_v6.Designer.cs">
+      <DependentUpon>201902081428556_v6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201902081431049_v7.cs" />
+    <Compile Include="Migrations\201902081431049_v7.Designer.cs">
+      <DependentUpon>201902081431049_v7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAnaSayfa.resx">
+      <DependentUpon>FrmAnaSayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGiris.resx">
+      <DependentUpon>FrmGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdaDetay.resx">
+      <DependentUpon>FrmOdaDetay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdalar.resx">
+      <DependentUpon>FrmOdalar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOdaYorumlari.resx">
+      <DependentUpon>FrmOdaYorumlari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902071701173_v1.resx">
+      <DependentUpon>201902071701173_v1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902071715500_v2.resx">
+      <DependentUpon>201902071715500_v2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902081323133_v5.resx">
+      <DependentUpon>201902081323133_v5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902081428556_v6.resx">
+      <DependentUpon>201902081428556_v6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201902081431049_v7.resx">
+      <DependentUpon>201902081431049_v7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
